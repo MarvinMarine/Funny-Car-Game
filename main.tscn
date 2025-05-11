@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://crtofdymb1qg7"]
+
+[ext_resource type="PackedScene" uid="uid://cek1r8awqidhe" path="res://assets/bad_car.blend" id="1_00114"]
+[ext_resource type="Script" path="res://car.gd" id="1_v4ti0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llpa0"]
+size = Vector3(3.71704, 4.44839, 5.68286)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_6qt4t"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Car" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0941, 0)
+linear_damp = 1.0
+angular_damp = 0.8
+script = ExtResource("1_v4ti0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108765, 0.867905, -1.37122)
+shape = SubResource("BoxShape3D_llpa0")
+
+[node name="bad_car" parent="Car" instance=ExtResource("1_00114")]
+
+[node name="RayCast3D" type="RayCast3D" parent="Car"]
+transform = Transform3D(28.4059, 0, 0, 0, 5.34478, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_6qt4t")
+
+[node name="Camera3D" type="Camera3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(-0.465692, 0.0942821, -0.87991, 0.0441028, 0.995546, 0.083331, 0.883847, 0, -0.467775, -27.204, 14.983, -17.938)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965234, 7.73591e-05, -0.261387, 0.25296, -0.252136, 0.934044, -0.0658328, -0.967692, -0.24339, 0, 0, 0)
