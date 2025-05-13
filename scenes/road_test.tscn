@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhctuojb6b6ls"]
+
+[ext_resource type="Script" path="res://scenes/road_maker.gd" id="1_nnljy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdd3w"]
+size = Vector3(102.443, 0.726563, 68.0452)
+
+[node name="RoadTest" type="Node3D"]
+script = ExtResource("1_nnljy")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1041, 0.136719, 33.5226)
+shape = SubResource("BoxShape3D_fdd3w")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cti8pty4glrv3"]
+
+[ext_resource type="Script" path="res://car.gd" id="1_t35tn"]
+[ext_resource type="PackedScene" uid="uid://cek1r8awqidhe" path="res://assets/bad_car.blend" id="2_iv1ke"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llpa0"]
+size = Vector3(3.71704, 4.44839, 5.68286)
+
+[node name="Car" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0941, 0)
+linear_damp = 1.0
+angular_damp = 2.193
+script = ExtResource("1_t35tn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108765, 0.867905, -1.37122)
+shape = SubResource("BoxShape3D_llpa0")
+
+[node name="bad_car" parent="." instance=ExtResource("2_iv1ke")]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(28.4059, 0, 0, 0, 5.34478, 0, 0, 0, 1, 0, 0, 0)
