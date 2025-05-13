@@ -1,9 +1,9 @@
 extends RigidBody3D
 
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
-var Forward_Speed = 500
-var Side_Speed = 500
-var Reverse_Speed = 500
+var Forward_Speed = 3000
+var Side_Speed = 2000
+var Reverse_Speed = 1000
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -7,7 +7,6 @@
 size = Vector3(3.71704, 4.44839, 5.68286)
 
 [node name="Car" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0941, 0)
 linear_damp = 1.0
 angular_damp = 2.193
 script = ExtResource("1_t35tn")
@@ -20,3 +19,6 @@ shape = SubResource("BoxShape3D_llpa0")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(28.4059, 0, 0, 0, 5.34478, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.8988, 11.5157)
